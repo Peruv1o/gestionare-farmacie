@@ -1,0 +1,32 @@
+@startuml
+start
+
+:Deschidere aplicatie;
+
+if (Utilizator inregistrat?) then (Da)
+  :Autentificare;
+else (Nu)
+  :Inregistrare cont;
+  :Autentificare;
+endif
+
+:Acces catalog produse;
+
+if (Actiune selectata?) then (Cautare)
+  :Introducere criteriu cautare;
+  :Afisare rezultate;
+elseif (Adaugare)
+  :Introducere date produs;
+  :Salvare produs;
+elseif (Editare)
+  :Modificare date produs;
+  :Actualizare produs;
+elseif (Stergere)
+  :Confirmare stergere;
+  :Stergere produs;
+elseif (LifeBot)
+  :Conversatie cu LifeBot;
+endif
+
+stop
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+
+actor Angajat
+
+rectangle "Life – Gestionare Farmacie" {
+
+  Angajat -- (Autentificare)
+  Angajat -- (Inregistrare cont)
+
+  Angajat -- (Cautare produs)
+
+  Angajat -- (Vizualizare produse)
+  Angajat -- (Adaugare produs)
+  Angajat -- (Editare produs)
+  Angajat -- (Stergere produs)
+  Angajat -- (Chat LifeBot)
+
+  (Vizualizare produse) <.. (Cautare produs) : <<extend>>
+}
+@enduml
